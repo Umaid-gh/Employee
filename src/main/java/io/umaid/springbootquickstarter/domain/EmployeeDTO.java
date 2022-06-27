@@ -21,6 +21,7 @@ public class EmployeeDTO {
 	private int eid;
 	private String ename;
 	private float esalary;
+
 	/**
 	 * @param eid
 	 * @param ename
@@ -31,7 +32,5 @@ public class EmployeeDTO {
 		this.ename = dao.getEname();
 		this.esalary = dao.getEsalary();
 	}
-	
-	
 
 }

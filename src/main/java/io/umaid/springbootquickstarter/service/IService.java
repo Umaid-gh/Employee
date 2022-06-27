@@ -7,14 +7,14 @@ import io.umaid.springbootquickstarter.domain.responseEmployee.ResponseEmployee;
 
 public interface IService {
 
-	public ResponseEmployee<List<EmployeeDTO>> getAllEmployees() ;
-	
-	public ResponseEmployee<EmployeeDTO> getEmployeebyId(int eid) ;
+	public ResponseEmployee<List<EmployeeDTO>> getAllEmployees();
 
-	public ResponseEmployee<EmployeeDTO> addEmployee(EmployeeDTO u) ;
+	public ResponseEmployee<EmployeeDTO> getEmployeebyId(int eid);
 
-	public ResponseEmployee<EmployeeDTO> updateEmployee(EmployeeDTO u, int id) ;
+	public ResponseEmployee<EmployeeDTO> addEmployee(EmployeeDTO u);
 
-	public ResponseEmployee<EmployeeDTO> deleteEmployeebyId(int eid) ;		
+	public ResponseEmployee<EmployeeDTO> updateEmployee(EmployeeDTO u, int id);
+
+	public ResponseEmployee<EmployeeDTO> deleteEmployeebyId(int eid);
 
 }

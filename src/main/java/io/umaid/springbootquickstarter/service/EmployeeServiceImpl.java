@@ -27,9 +27,9 @@ public class EmployeeServiceImpl implements IService {
 
 		if (listDao.isEmpty()) {
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Database is Empty!!!");
-//			response.setData(null);
-//			response.setMessage("Database is Empty!!!");
-//			response.setStatus(404);
+			// response.setData(null);
+			// response.setMessage("Database is Empty!!!");
+			// response.setStatus(404);
 		} else {
 			for (int i = 0; i < listDao.size(); i++) {
 				EmployeeDAO emp = listDao.get(i);
@@ -68,9 +68,9 @@ public class EmployeeServiceImpl implements IService {
 			response.setStatus(200);
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee ID not Found");
-//			response.setData(null);
-//			response.setMessage("Employee ID not Found");
-//			response.setStatus(404);
+			// response.setData(null);
+			// response.setMessage("Employee ID not Found");
+			// response.setStatus(404);
 		}
 		return response;
 	}
@@ -83,12 +83,9 @@ public class EmployeeServiceImpl implements IService {
 
 		if (optionalDao.isPresent()) {
 			throw new ResponseStatusException(HttpStatus.FOUND, "Employee Already Present");
-//			response.setData(dto);
-//			response.setMessage("Employee Already Present");
-//			response.setStatus(404);
 		} else {
 			// converting DTO to DAO
-			EmployeeDAO dao = new EmployeeDAO(dto.getEid(),dto.getEname(),dto.getEsalary());
+			EmployeeDAO dao = new EmployeeDAO(dto.getEid(), dto.getEname(), dto.getEsalary());
 			// saving new DAO
 			empRepo.save(dao);
 			response.setData(dto);
@@ -101,7 +98,7 @@ public class EmployeeServiceImpl implements IService {
 
 	public ResponseEmployee<EmployeeDTO> updateEmployee(EmployeeDTO dto, int id) {
 		ResponseEmployee<EmployeeDTO> response = new ResponseEmployee<>();
-		
+
 		Optional<EmployeeDAO> optionalDao = empRepo.findById(id);
 		if (optionalDao.isPresent()) {
 			EmployeeDAO emp = new EmployeeDAO(dto);
@@ -111,9 +108,9 @@ public class EmployeeServiceImpl implements IService {
 			empRepo.save(emp);
 		} else {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Employee ID Not Found!!");
-//			response.setData(null);
-//			response.setMessage("Employee ID Not Found!!");
-//			response.setStatus(404);
+			// response.setData(null);
+			// response.setMessage("Employee ID Not Found!!");
+			// response.setStatus(404);
 		}
 		return response;
 
@@ -132,9 +129,10 @@ public class EmployeeServiceImpl implements IService {
 			empRepo.deleteById(eid);
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee ID Not Found!!");
-//			response.setData(null);
-//			response.setMessage("Employee ID: " + eid + " Not Found to Deleted!!!");
-//			response.setStatus(404);
+			// response.setData(null);
+			// response.setMessage("Employee ID: " + eid + " Not Found to
+			// Deleted!!!");
+			// response.setStatus(404);
 		}
 		return response;
 	}

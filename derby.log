@@ -11,3 +11,6 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon Jun 27 12:40:25 IST 2022:
+Shutting down instance a816c00e-0181-9535-ac27-0000039f9878 on database directory memory:C:\Users\umaid\workspace\Employee\5bbe5ad0-648e-4a12-a357-a29508fde903 with class loader sun.misc.Launcher$AppClassLoader@73d16e93 

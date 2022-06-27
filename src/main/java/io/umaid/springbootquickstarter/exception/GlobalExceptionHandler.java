@@ -12,13 +12,13 @@ import io.umaid.springbootquickstarter.exception.domain.ApiExceptionResponse;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 	@ExceptionHandler(value = ResponseStatusException.class)
-	public final ResponseEntity<ApiExceptionResponse> handleExceptionResponse(HttpServletRequest request, ResponseStatusException response)
-	{
+	public final ResponseEntity<ApiExceptionResponse> handleExceptionResponse(HttpServletRequest request,
+			ResponseStatusException response) {
 		ApiExceptionResponse apiExceptionResponse = new ApiExceptionResponse();
 		apiExceptionResponse.setMessage(response.getReason());
 		apiExceptionResponse.setStatus(response.getStatus().value());
 		return ResponseEntity.status(response.getStatus()).body(apiExceptionResponse);
-		
+
 	}
 
 }

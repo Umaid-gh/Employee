@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import io.umaid.springbootquickstarter.domain.EmployeeDAO;
 
 @Repository
-public interface EmployeeRepository extends CrudRepository<EmployeeDAO,Integer> {
+public interface EmployeeRepository extends CrudRepository<EmployeeDAO, Integer> {
 
 }
